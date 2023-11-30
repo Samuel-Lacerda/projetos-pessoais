@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+:root{
+    --cor-principal-console: #69d3ab;
+    --cor-clara-principal-console: #7addb7;
+    --cor-contorno-principal: #204a3b;
+    --cor-visor: #bbf2c8;
+    --cor-sombra-visor: #70ef88;
+    --cor-botao-amarelo: #fcef54;
+    --cor-botao-azul: #4040d3;
+    --cor-botao-rosa: #ee0061;
+    --cor-botao-verde: #2bb45a;
+
+}
+
+body{
+    background-color: rgb(129, 219, 219);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.console{
+    border: 25px solid var(--cor-contorno-principal);
+    border-radius: 20px;
+    width: 80%;
+    height: 50%;
+    background-color: var(--cor-principal-console);
+}
