@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+:root{
+    --azul-claro: #4EA8DE;
+    --purpura-escuro: #5E60CE;
+    --cor-de-fundo: #333333;
+    --cor-fundo-escuro: #0D0D0D;
+}
+
+header{
+    text-align: center;
+}
+
+.logo-img, .logo-texto{
+    display: inline-block;
+}
+.logo-texto{
+    margin-right: -4px;
+    color: var(--azul-claro);
+}
+.logo-texto2{
+    color: var(--purpura-escuro);
+    display: inline-block;
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+}
