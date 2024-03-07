@@ -19,6 +19,54 @@
     --cor-fundo-escuro: #181717;
 }
 
+.modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #181717d0;
+}
+
+.modal-janela{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 450px;
+    height: 200px;
+    background-color: #181717;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.116);
+}
+
+.modal-janela-superior{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#icon-close{
+    position: sticky;
+    margin: 10px;
+    cursor: pointer;
+    color: #4EA8DE;
+    z-index: 1;
+}
+
+.modal-janela-superior > h1{
+    margin-left: -52px;
+    font-weight: 870;
+    margin-top: 5px;
+    margin-right: 60px;
+    color: #4EA8DE;
+    z-index: 1;
+}
+.modal-janela-superior > .h1-roxo{
+ color: #5E60CE;;   
+}
+
+
 header{
     padding-top: 50px;
     height: 150px;
@@ -183,4 +231,33 @@ footer > span{
 
 footer > span:hover{
     cursor: pointer;
+}
+
+@keyframes girar {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .circulo-de-carregamento {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #4EA8DE;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: girar 1s linear infinite; 
+    align-self: center;
+    margin-top: 35px;
+  }
+
+.resultado{
+    font-weight: 600;
+    text-shadow: 1px 1px 1px black;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
 }
