@@ -6,7 +6,9 @@ let botaoFechar = document.querySelector('#icon-close')
 let modal = document.querySelector('.modal')
 let loading = document.querySelector('.circulo-de-carregamento')
 let resultado = document.querySelector('.resultado')
+let contador = document.querySelector('.contador-itens-num')
 let itensLista = []
+let c = 0
 
 botaoSortear.addEventListener("click",sortear)
 botaoAdd.addEventListener("click",pegarInput)
@@ -24,7 +26,8 @@ input.addEventListener("keypress", function(event){
 })
 
 function sortear(){
-    resultado.innerHTML = ``
+    if(itensLista.length > 0){
+        resultado.innerHTML = ``
     loading.style.display = 'block'
     modal.style.display = 'flex'
 
@@ -41,12 +44,15 @@ function sortear(){
         }
         resultado.innerHTML = `${texto}`
     }
+    }
 
 }
 
 function deletarItem(index){
     lista.removeChild(itensLista[index]);
     itensLista.splice(index, 1);
+    c = itensLista.length
+    contador.innerHTML = `${c}`
 }
 
 
@@ -67,7 +73,8 @@ function pegarInput(){
             let index = itensLista.indexOf(novoItem);
             deletarItem(index);
         });
-
+        c = itensLista.length
+        contador.innerHTML = `${c}`
         document.querySelector('#item').value = ``
 
     }
