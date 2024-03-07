@@ -263,3 +263,18 @@ footer > span:hover{
 }
 
 
+.resultado {
+    font-size: 36px;
+    color: #333; /* Cor do texto */
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff00de, 0 0 7px #ff00de, 0 0 8px #ff00de, 0 0 10px #ff00de, 0 0 15px #ff00de;
+    animation: brilho 5s ease-in-out infinite alternate;
+  }
+
+  @keyframes brilho {
+    0% {
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff00de, 0 0 7px #ff00de, 0 0 8px #ff00de, 0 0 10px #ff00de, 0 0 15px #ff00de;
+    }
+    100% {
+      text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff, 0 0 5px #ff00de, 0 0 7px #ff00de, 0 0 8px #ff00de, 0 0 10px #ff00de, 0 0 18px #ff00de;
+    }
+  }

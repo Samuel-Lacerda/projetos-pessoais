@@ -6,6 +6,7 @@ let botaoFechar = document.querySelector('#icon-close')
 let modal = document.querySelector('.modal')
 let loading = document.querySelector('.circulo-de-carregamento')
 let resultado = document.querySelector('.resultado')
+let musica = document.querySelector('.musica')
 let itensLista = []
 
 botaoSortear.addEventListener("click",sortear)
@@ -31,15 +32,10 @@ function sortear(){
     setTimeout(exibirNumero, 1000)
     function exibirNumero(){
         loading.style.display = 'none'
-        let n = Math.floor(Math.random() * itensLista.length)
-        let texto = '';
-    
-        for (let node of itensLista[n].childNodes) {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-                texto += node.nodeValue.trim() + ' ';
-            }
-        }
+        let texto = 'Tirar a sua roupa e ir de sapacagens';
         resultado.innerHTML = `${texto}`
+        musica.volume = 0.2
+        musica.play()
     }
 
 }
