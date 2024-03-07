@@ -8,6 +8,8 @@ let loading = document.querySelector('.circulo-de-carregamento')
 let resultado = document.querySelector('.resultado')
 let contador = document.querySelector('.contador-itens-num')
 let itensLista = []
+let h1roxo = document.querySelector('.h1-roxo')
+let h1azul = document.querySelector('.h1-azul')
 let c = 0
 
 botaoSortear.addEventListener("click",sortear)
@@ -26,24 +28,32 @@ input.addEventListener("keypress", function(event){
 })
 
 function sortear(){
-    if(itensLista.length > 0){
+    if(itensLista.length > 1){
         resultado.innerHTML = ``
-    loading.style.display = 'block'
-    modal.style.display = 'flex'
+        loading.style.display = 'block'
+        modal.style.display = 'flex'
+        h1azul.style.display = 'block'
+        h1roxo.style.display = 'block'
 
-    setTimeout(exibirNumero, 1000)
-    function exibirNumero(){
-        loading.style.display = 'none'
-        let n = Math.floor(Math.random() * itensLista.length)
-        let texto = '';
-    
-        for (let node of itensLista[n].childNodes) {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-                texto += node.nodeValue.trim() + ' ';
+        setTimeout(exibirNumero, 1000)
+        function exibirNumero(){
+            loading.style.display = 'none'
+            let n = Math.floor(Math.random() * itensLista.length)
+            let texto = '';
+        
+            for (let node of itensLista[n].childNodes) {
+                if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
+                    texto += node.nodeValue.trim() + ' ';
+                }
             }
+            resultado.innerHTML = `${texto}`
         }
-        resultado.innerHTML = `${texto}`
-    }
+        } else{
+            resultado.innerHTML = `Adicione mais de uma opção.`
+            loading.style.display = 'none'
+            modal.style.display = 'flex'
+            h1azul.style.display = 'none'
+            h1roxo.style.display = 'none'
     }
 
 }
